@@ -1,5 +1,6 @@
 package hello.hellospring.discount;
 
+import hello.hellospring.member.Grade;
 import hello.hellospring.member.Member;
 
 public class FixDiscountPolicy implements DiscountPolicy{
