@@ -11,6 +11,14 @@ java {
 	sourceCompatibility = '17'
 }
 
+// lombok 설정 추가 시작
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+// lombok 설정 추가 끝
+
 // "아래 dependencies에 있는 의존성들을 maveCentral 이라는 곳에서 다운로드 받아라" 라는 설정
 repositories {
 	mavenCentral()
@@ -20,7 +28,17 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.jetbrains:annotations:24.0.0'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//lombok 라이브러리 추가 시작
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	//lombok 라이브러리 추가 끝
+
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
