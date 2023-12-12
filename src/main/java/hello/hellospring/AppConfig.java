@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 // 설정정보를 담당하는 클래스라는 것을 알리는 어노테이션
-@Configuration
+//@Configuration
 public class AppConfig {
 
     // @Bean이 붙은 것은 스프링 컨테이너에 등록이 된다.
