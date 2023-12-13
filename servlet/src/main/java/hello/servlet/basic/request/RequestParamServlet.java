@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Enumeration;
 
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
@@ -35,5 +36,16 @@ public class RequestParamServlet extends HttpServlet {
         System.out.println();
 
         resp.getWriter().write("success");
+
+
+
+        resp.setContentType("text/html");
+        resp.setCharacterEncoding("utf-8");
+        PrintWriter writer = resp.getWriter();
+        writer.println("<html>");
+        writer.println("<body>");
+        writer.println(" <div>안녕?</div>");
+        writer.println("</body>");
+        writer.println("</html>");
     }
 }
